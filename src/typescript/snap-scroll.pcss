@@ -1,0 +1,23 @@
+.viewport {
+    overflow: hidden;
+    width: 100%;
+    touch-action: none !important;
+}
+
+.snap-scroll {
+    display: flex;
+    flex-direction: row;
+    will-change: transform;
+    width: 100%;
+
+    > * {
+        display: block;
+        flex: none;
+        width: 100%;
+    }
+
+    &.animate {
+        transition: all .3s ease-out;
+    }
+}
+
