@@ -1,6 +1,6 @@
 {
     "name": "@feather-ts/ui-common",
-    "version": "1.0.39",
+    "version": "1.0.41",
     "description": "feather-ts ui common classes and styles",
     "types": "dist/ui-common.d.ts",
     "main": "dist/ui-common.js",
@@ -14,10 +14,8 @@
         "url": "https://github.com/feather-ts/ui-common/issues"
     },
     "homepage": "https://github.com/feather-ts/ui-common#readme",
-    "dependencies": {
-        "@feather-ts/feather-ts": "2.0.37"
-    },
     "devDependencies": {
+        "@feather-ts/feather-ts": "2.0.37",
         "isomorphic-fetch": "2.2.1",
         "jsdom": "11.8.0",
         "mocha": "5.1.1",
