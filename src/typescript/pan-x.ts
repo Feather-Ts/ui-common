@@ -1,6 +1,4 @@
-import {addToConstructorQueue, AnyWidget, EnhancedConstructor} from '@feather-ts/feather-ts/dist/decorators/construct'
-import {EventConfig} from '@feather-ts/feather-ts/dist/decorators/event'
-import {registerCleanUp} from '@feather-ts/feather-ts/dist/core/cleanup'
+import {addToConstructorQueue, AnyWidget, registerCleanUp, EventConfig} from '@feather-ts/feather-ts'
 
 const hasPointers = ('onpointerup' in document.documentElement)
 
@@ -79,7 +77,7 @@ const initPanX = (widget: AnyWidget, method: string, conf: EventConfig, node: HT
     }
     const handler = (sev: PointerEvent) => {
         const time = +new Date(),
-              isMouse = /mouse/.test(sev.type)
+            isMouse = /mouse/.test(sev.type)
         if (sev.which === 3) {
             return;
         }
@@ -119,8 +117,8 @@ const initPanX = (widget: AnyWidget, method: string, conf: EventConfig, node: HT
 }
 
 export const PanX = (conf: EventConfig = {}) => (proto: AnyWidget, method: string) => {
-    addToConstructorQueue(proto.constructor as EnhancedConstructor,
+    addToConstructorQueue(proto.constructor as any,
         (widget: AnyWidget, node: HTMLElement) => {
             initPanX(widget, method, conf, node)
-    })
+        })
 }

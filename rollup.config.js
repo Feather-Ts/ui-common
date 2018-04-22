@@ -16,13 +16,6 @@ export default {
             sourcemap: true,
             banner: `/* feather-ts/ui-common v${pkg.version} */`,
             exports: 'named'
-        },
-        {
-            file: pkg.module,
-            format: 'es',
-            sourcemap: true,
-            banner: `/* feather-ts/ui-common v${pkg.version} */`,
-            exports: 'named'
         }
     ],
     plugins: [

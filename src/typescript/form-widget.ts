@@ -1,5 +1,4 @@
-import {Widget} from '@feather-ts/feather-ts/dist/decorators/construct';
-import {render} from '@feather-ts/feather-ts/dist/core/bind';
+import {Widget, render} from '@feather-ts/feather-ts';
 
 export interface FormWidgetConfig<T> {
     initialValue: T
