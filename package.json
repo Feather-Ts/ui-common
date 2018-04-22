@@ -1,9 +1,10 @@
 {
     "name": "@feather-ts/ui-common",
-    "version": "1.0.31",
+    "version": "1.0.33",
     "description": "feather-ts ui common classes and styles",
     "types": "dist/ui-common.d.ts",
     "main": "dist/ui-common.js",
+    "module": "dist/ui-common.es.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/feather-ts/ui-common.git"
@@ -29,6 +30,11 @@
         "postcss-import": "11.1.0",
         "postcss-nested": "3.0.0",
         "rimraf": "2.6.2",
+        "rollup-plugin-commonjs": "9.1.0",
+        "rollup-plugin-node-resolve": "3.3.0",
+        "rollup-plugin-postcss": "1.6.1",
+        "rollup-plugin-typescript2": "0.13.0",
+        "rollup-plugin-url": "1.4.0",
         "stylelint": "9.2.0",
         "stylelint-config-standard": "18.2.0",
         "ts-node": "6.0.0",
@@ -47,7 +53,8 @@
         "npm:version": "npm --no-git-tag-version version patch",
         "ui:compile": "tsc -d",
         "css:compile": "postcss src/typescript/**/*.pcss --dir dist --base",
-        "prepare": "npm-run-all clean npm:version css:compile ui:compile",
+        "bundle": "rollup -c",
+        "prepare": "npm-run-all clean npm:version css:compile ui:compile bundle",
         "test": "mocha --require ts-node/register --require src/javascript/mocha-setup.js src/typescript/**/*.spec.ts"
     }
 }

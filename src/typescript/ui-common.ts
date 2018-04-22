@@ -1,5 +1,12 @@
 import './form-widget'
 import './pan-x'
 import './snap-scroll'
+import './keys'
 import './util'
 import './snap-scroll.pcss'
+
+export {documentClick} from './util'
+export {isKey, Key} from './keys'
+export {SnapScroll} from './snap-scroll'
+export {FormWidgetConfig, FormWidget} from './form-widget'
+export {Phase, PanXEventInit, PanX} from './pan-x'
