@@ -26,7 +26,7 @@ export default {
             tsconfigOverride: {
                 compilerOptions: {
                     "module": "ES2015",
-                    "target": "ESNext",
+                    "target": "es5",
                     "declaration": true
                 },
                 clean: true
