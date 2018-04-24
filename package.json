@@ -1,6 +1,6 @@
 {
     "name": "@feather-ts/ui-common",
-    "version": "1.0.59",
+    "version": "1.0.60",
     "description": "feather-ts ui common classes and styles",
     "types": "dist/ui-common.d.ts",
     "main": "dist/ui-common.js",
@@ -15,7 +15,7 @@
     },
     "homepage": "https://github.com/feather-ts/ui-common#readme",
     "devDependencies": {
-        "@feather-ts/feather-ts": "^2.0.46",
+        "@feather-ts/feather-ts": "2.0.48",
         "isomorphic-fetch": "2.2.1",
         "jsdom": "11.8.0",
         "mocha": "5.1.1",
@@ -45,7 +45,7 @@
     ],
     "scripts": {
         "watch": "parcel src/html/index.html -p 9080",
-        "clean": "rimraf dist",
+        "clean": "rimraf dist lib",
         "npm:version": "npm --no-git-tag-version version patch",
         "ui:compile": "tsc -d",
         "ui:watch": "tsc -w -d",
