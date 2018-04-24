@@ -1,4 +1,6 @@
-import {addToConstructorQueue, AnyWidget, registerCleanUp, EventConfig} from '@feather-ts/feather-ts'
+import {addToConstructorQueue, AnyWidget} from '@feather-ts/feather-ts/dist/decorators/construct'
+import {EventConfig} from '@feather-ts/feather-ts/dist/decorators/event'
+import {registerCleanUp} from '@feather-ts/feather-ts/dist/core/cleanup'
 
 const hasPointers = ('onpointerup' in document.documentElement)
 

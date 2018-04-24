@@ -2,7 +2,6 @@ import resolve from 'rollup-plugin-node-resolve'
 import tsc from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from 'rollup-plugin-commonjs'
-import url from 'rollup-plugin-url'
 
 import pkg from './package.json'
 
