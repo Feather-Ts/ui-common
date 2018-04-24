@@ -16,22 +16,30 @@ export default {
             sourcemap: true,
             banner: `/* feather-ts/ui-common v${pkg.version} */`,
             exports: 'named'
+        },
+        {
+            file: pkg.module,
+            format: 'es',
+            sourcemap: true,
+            banner: `/* feather-ts/ui-common v${pkg.version} */`,
+            exports: 'named'
         }
     ],
     plugins: [
-        resolve(),
+        commonjs(),
+        resolve({
+            browser: true
+        }),
         postcss(),
-        url(),
         tsc({
             tsconfigOverride: {
                 compilerOptions: {
                     "module": "ES2015",
                     "target": "es5",
-                    "declaration": true
+                    "declaration": false
                 },
                 clean: true
             }
         }),
-        commonjs()
     ]
 }
