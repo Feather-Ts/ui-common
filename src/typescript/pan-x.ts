@@ -1,8 +1,7 @@
 import {addToConstructorQueue, AnyWidget} from '@feather-ts/feather-ts/dist/decorators/construct'
 import {EventConfig} from '@feather-ts/feather-ts/dist/decorators/event'
 import {registerCleanUp} from '@feather-ts/feather-ts/dist/core/cleanup'
-
-const hasPointers = ('onpointerup' in document.documentElement)
+import {addEventListeners, hasPointers, removeEventListeners, supportsOnlyTouch} from './util'
 
 type EventType = 'start' | 'move' | 'end'
 type EventSet = {[k in EventType]: string[]}
@@ -14,21 +13,19 @@ const PointerEvents: EventSet = {
     end: ['pointerup']
 }
 
+const OnlyTouch: EventSet = {
+    start: ['touchstart'],
+    move: ['touchmove'],
+    end: ['touchend']
+}
+
 const NoPointerEvents: EventSet = {
     start: ['touchstart', 'mousedown'],
     move: ['touchmove', 'mousemove'],
     end: ['touchend', 'mouseup']
 }
 
-const eventSet = hasPointers ? PointerEvents : NoPointerEvents
-
-const addEventListeners = (types: string[], node: Element, listener: EventListener, options?) => {
-    types.forEach(type => node.addEventListener(type, listener, options))
-}
-
-const removeEventListeners = (types: string[], node: Element, listener: EventListener) => {
-    types.forEach(type => node.removeEventListener(type, listener))
-}
+const eventSet = hasPointers ? PointerEvents : (supportsOnlyTouch ? OnlyTouch : NoPointerEvents)
 
 export enum Phase {
     start,
@@ -79,7 +76,7 @@ const initPanX = (widget: AnyWidget, method: string, conf: EventConfig, node: HT
     }
     const handler = (sev: PointerEvent) => {
         const time = +new Date(),
-            isMouse = /mouse/.test(sev.type)
+              isMouse = /mouse/.test(sev.type)
         if (sev.which === 3) {
             return;
         }
