@@ -1,6 +1,6 @@
 {
     "name": "@feather-ts/ui-common",
-    "version": "1.0.62",
+    "version": "1.0.68",
     "description": "feather-ts ui common classes and styles",
     "types": "dist/ui-common.d.ts",
     "main": "dist/ui-common.js",
@@ -15,7 +15,7 @@
     },
     "homepage": "https://github.com/feather-ts/ui-common#readme",
     "peerDependencies": {
-        "@feather-ts/feather-ts": "^2.0.48"
+        "@feather-ts/feather-ts": "2.0.73"
     },
     "devDependencies": {
         "isomorphic-fetch": "2.2.1",
@@ -55,8 +55,5 @@
         "bundle": "rollup -c",
         "prepare": "npm-run-all clean npm:version css:compile ui:compile",
         "test": "mocha --require ts-node/register --require src/javascript/mocha-setup.js src/typescript/**/*.spec.ts"
-    },
-    "dependencies": {
-        "@feather-ts/feather-ts": "^2.0.49"
     }
 }

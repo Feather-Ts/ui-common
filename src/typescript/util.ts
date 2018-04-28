@@ -19,5 +19,5 @@ export const documentClick = (el: HTMLElement, func: Function) => {
             func()
         }
     }
-    doc.addEventListener(click, handler)
+    doc.addEventListener(click, handler, {passive: false, capture: false})
 }

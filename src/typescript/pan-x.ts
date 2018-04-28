@@ -40,17 +40,20 @@ interface ExtraInfo {
 }
 
 export interface PanXEventInit {
-    x: number
-    y: number
-    phase: Phase
-    diffX: number
-    diffY: number
-    diffTime: number
+    x: number,
+    y: number,
+    phase: Phase,
+    diffX: number,
+    diffY: number,
+    diffTime: number,
+    target: EventTarget
 }
 
 const getPanXEvent = (ev: PointerEvent, phase: Phase, extra = {} as ExtraInfo) => {
-    const x = ev.clientX || (ev.touches && ev.touches.length ? ev.touches[0].pageX : ev.changedTouches[0].pageX)
-    const y = ev.clientY || (ev.touches && ev.touches.length ? ev.touches[0].pageY : ev.changedTouches[0].pageY)
+    const x = ev.clientX || (ev.touches && ev.touches.length ?
+        ev.touches[0].pageX : ev.changedTouches[0].pageX)
+    const y = ev.clientY || (ev.touches && ev.touches.length ?
+        ev.touches[0].pageY : ev.changedTouches[0].pageY)
     return new CustomEvent<PanXEventInit>('pan-x', {
         bubbles: true,
         cancelable: true,
@@ -60,7 +63,8 @@ const getPanXEvent = (ev: PointerEvent, phase: Phase, extra = {} as ExtraInfo) =
             phase,
             diffX: x - extra.startX,
             diffY: y - extra.startY,
-            diffTime: +new Date() - extra.startTime
+            diffTime: +new Date() - extra.startTime,
+            target: ev.target
         }
     })
 }

@@ -72,6 +72,11 @@ export class SnapScroll implements Widget {
         }
     }
 
+    abort(slide: number) {
+        this.element.classList.remove('animate')
+        this.go(slide, false)
+    }
+
     @On({})
     transitionend(ev: TransitionEvent) {
         this.element.classList.remove('animate')
