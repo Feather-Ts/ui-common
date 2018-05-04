@@ -1,6 +1,4 @@
-import {addToConstructorQueue, AnyWidget} from '@feather-ts/feather-ts/dist/decorators/construct'
-import {EventConfig} from '@feather-ts/feather-ts/dist/decorators/event'
-import {registerCleanUp} from '@feather-ts/feather-ts/dist/core/cleanup'
+import {addToConstructorQueue, AnyWidget, EventConfig, registerCleanUp} from '@feather-ts/feather-ts'
 import {addEventListeners, hasPointers, removeEventListeners, supportsOnlyTouch} from './util'
 
 type EventType = 'start' | 'move' | 'end'

@@ -1,9 +1,10 @@
 {
     "name": "@feather-ts/ui-common",
-    "version": "1.0.68",
+    "version": "1.0.74",
     "description": "feather-ts ui common classes and styles",
     "types": "dist/ui-common.d.ts",
-    "main": "dist/ui-common.js",
+    "main": "lib/ui-common.js",
+    "module": "lib/ui-common.es6.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/feather-ts/ui-common.git"
@@ -15,7 +16,7 @@
     },
     "homepage": "https://github.com/feather-ts/ui-common#readme",
     "peerDependencies": {
-        "@feather-ts/feather-ts": "2.0.73"
+        "@feather-ts/feather-ts": "^2.0.80"
     },
     "devDependencies": {
         "isomorphic-fetch": "2.2.1",
@@ -53,7 +54,10 @@
         "ui:watch": "tsc -w -d",
         "css:compile": "postcss src/typescript/**/*.pcss --dir dist --base",
         "bundle": "rollup -c",
-        "prepare": "npm-run-all clean npm:version css:compile ui:compile",
+        "prepare": "npm-run-all clean npm:version css:compile ui:compile bundle",
         "test": "mocha --require ts-node/register --require src/javascript/mocha-setup.js src/typescript/**/*.spec.ts"
+    },
+    "dependencies": {
+        "@feather-ts/feather-ts": "^2.0.79"
     }
 }
