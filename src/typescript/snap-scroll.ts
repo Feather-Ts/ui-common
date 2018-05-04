@@ -1,5 +1,4 @@
-import {Construct, Widget} from '@feather-ts/feather-ts/dist/decorators/construct'
-import {On} from '@feather-ts/feather-ts/dist/decorators/event'
+import {Construct, On, Widget} from '@feather-ts/feather-ts'
 import {PanX, PanXEventInit, Phase} from './pan-x'
 import './snap-scroll.pcss'
 

@@ -25,10 +25,10 @@ export default {
         }
     ],
     plugins: [
-        commonjs(),
-        resolve({
-            browser: true
+        commonjs({
+            exclude: ['node_modules/**']
         }),
+        resolve(),
         postcss(),
         tsc({
             tsconfigOverride: {
@@ -40,5 +40,6 @@ export default {
                 clean: true
             }
         }),
-    ]
+    ],
+    external: ['@feather-ts/feather-ts']
 }
