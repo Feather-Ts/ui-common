@@ -25,9 +25,7 @@ export default {
         }
     ],
     plugins: [
-        commonjs({
-            exclude: ['node_modules/**']
-        }),
+        commonjs(),
         resolve(),
         postcss(),
         tsc({
@@ -35,7 +33,8 @@ export default {
                 compilerOptions: {
                     "module": "ES2015",
                     "target": "es5",
-                    "declaration": false
+                    "declaration": true,
+                    "noEmitHelpers": true
                 },
                 clean: true
             }

@@ -1,6 +1,6 @@
 {
     "name": "@feather-ts/ui-common",
-    "version": "1.0.76",
+    "version": "1.0.79",
     "description": "feather-ts ui common classes and styles",
     "types": "dist/ui-common.d.ts",
     "main": "lib/ui-common.js",
@@ -44,7 +44,8 @@
         "access": "public"
     },
     "files": [
-        "dist"
+        "dist",
+        "lib"
     ],
     "scripts": {
         "watch": "parcel src/html/index.html -p 9080",
